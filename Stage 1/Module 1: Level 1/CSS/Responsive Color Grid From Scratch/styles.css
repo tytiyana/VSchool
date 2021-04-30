@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+.color1{
+    height: 200px;
+    width: 100%;
+    background-color: #F5C6D6;
+    margin-bottom: 3px;
+}
+
+
+.color2{
+    height: 200px;
+    width: 100%;
+    background-color:#EE2E84;
+    margin-bottom: 3px;
+}
+
+.color2-1{
+    height: 200px;
+    width: 100%;
+    background-color:#EE2E84;
+    margin-bottom: 3px;
+}
+
+.color2-2{
+    height: 200px;
+    width: 100%;
+    background-color:#EE2E84;
+    margin-bottom: 3px;
+}
+
+.color2-3{
+    height: 200px;
+    width: 100%;
+    background-color:#EE2E84;
+    margin-bottom: 3px;
+}
+
+.color3{
+    height: 200px;
+    width: 100%;
+    background-color:#85CFD8;
+    margin-bottom: 3px;
+}
+.color3-1{
+    height: 200px;
+    width: 100%;
+    background-color:#85CFD8;
+    margin-bottom: 3px;
+}
+
+.color4{
+    height: 200px;
+    width: 100%;
+    background-color:#8DC63F;
+    margin-bottom: 3px;
+}
+
+.color5{
+    height: 200px;
+    width: 100%;
+    background-color:#E76E34;
+    margin-bottom: 3px;
+}
+
+@media (min-width: 768px){
+    * {
+        box-sizing: border-box; 
+        font-size: 0px;
+    }
+    
+    .color1{
+        height: 200px;
+        width: 96%;
+        background-color: #F5C6D6;
+        border: 10px solid white;
+    }
+    
+    
+    .color2{
+        height: 200px;
+        width: 24%;
+        background-color:#EE2E84;
+        border: 12px solid white;
+        display: inline-block;
+    }
+    
+    .color2-1{
+        height: 200px;
+        width: 24%;
+        background-color:#EE2E84;
+        border: 12px solid white;
+        display: inline-block;
+    }
+    
+    .color2-2{
+        height: 200px;
+        width: 24%;
+        background-color:#EE2E84;
+        border: 12px solid white;
+        display: inline-block;
+    }
+    
+    .color2-3{
+        height: 200px;
+        width: 24%;
+        background-color:#EE2E84;
+        border: 12px solid white;
+        display: inline-block;
+    }
+    
+    .color3{
+        height: 200px;
+        width: 48%;
+        background-color:#85CFD8;
+        border: 11px solid white;
+        display: inline-block;
+    }
+    
+    .color3-1{
+        height: 200px;
+        width: 48%;
+        background-color:#85CFD8;
+        border: 11px solid white;
+        display: inline-block;
+    }
+    
+    .color4{
+        height: 200px;
+        width: 73%;
+        background-color:#8DC63F;
+        border: 10px solid white;
+        display: inline-block;
+    }
+    
+    .color5{
+        height: 200px;
+        width: 23%;
+        background-color:#E76E34;
+        border: 10px solid white;
+        display: inline-block;
+    }
+
+}

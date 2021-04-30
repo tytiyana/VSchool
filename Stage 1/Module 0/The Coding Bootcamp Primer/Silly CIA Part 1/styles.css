@@ -1,0 +1,18 @@
+h1,h3{
+    font: georgia; text-align: center;
+}
+h1{
+    color:darkgreen;
+}
+p{
+    line-height:  25px;
+    }
+    img{
+        float: left;
+    }
+    a{
+    text-decoration: none;
+    }
+    .you{
+        text-transform: uppercase;
+    }

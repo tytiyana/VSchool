@@ -1,0 +1,10 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(12, 100px) ;
+    grid-template-rows: repeat(10, 100px);
+}
+
+p{
+    grid-area: 2/4/8/10;
+    background-color: rgb(255, 152, 241);
+}

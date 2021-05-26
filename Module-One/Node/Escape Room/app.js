@@ -16,7 +16,7 @@ function handHole (){startLine}
 
 if(startLine === "put my hand through the hole") {
     let  holeHand = handHole  (startLine)
-console.log ("Oh no, You died! You got bit my a super poisonous spider when you put your hand through the wall.!")
+console.log ("Oh no, You died! You got bit by a super poisonous spider when you put your hand through the wall.!")
 }
 
 

@@ -1,19 +1,15 @@
 const readline = require("readline-sync")
-readline.setDefaultOptions({limit: [`w`, `i`,`q`,`f`,`r`,`a`,`x`,`m`, `s`, `p`, `re`, `sp`,`t`,``]})
+readline.setDefaultOptions({limit: [`w`, `i`,`q`,`f`,`r`,`a`,`m`, `s`, `p`, `re`, `sp`,`t`,``]})
 const userName = readline.question(`May I have your name?`, {limit:[null]})
 console.log(`Hello ${userName}! Welcome to the Avengers. My name is 'Jarvis'. I'll be training you before your mission. We've heard a lot about your abilities from Agent Coulson. When you arrived to Avengers Headquarters, you were placed in a simulation. This is the beginning of your training. As you navigate through this simulation enemies will appear at random and you'll be given the choice to fight or run. If you fight and die, you will start over. If you run and don't manage to escape, you will start over. If you fight and win, you will continue on and if you successfully escape, you will continue on. If this ever becomes too much, you may quit but you will lose all progress and need to start over when you are ready. Good luck and just remember, the world needs you. Once you pass your training you will offically be an Avenger and you will protect the world at any cost. Start by walking.
-Use "w" to walk, "i" to check your inventory, "f" to fight, "r" to run, and "q" to quit at anytime. Once you've read a statement print "ok" and press return to continue.`)
+Use "w" to walk, "i" to check your inventory, "f" to fight, "r" to run, and "q" to quit at anytime. Once you've read a statement, press return to continue.`)
   /*---------* Beginning of RPG *-----------*/
   const playerDetails = {
     name: `${userName}`,
     healthPoints: 100,
     isAlive: true
-  } 
-  if (playerDetails.healthPoints === 0) {
-    playerDetails.isAlive = false
-    return
-  } // can't figure out how to get this to work or the inventory. Or a way of implementing an add to the current inventory or removal of an item after use.
-while (playerDetails.isAlive === true) {
+  }  // can't figure out how to get this to work or the inventory. Or a way of implementing an add to the current inventory or removal of an item after use. Once you die game ends.
+while (playerDetails.healthPoints >= 1) {
 const input = readline.prompt()
 if (input === "w") {
   /*---------* Player Essentials*-----------*/
@@ -23,13 +19,15 @@ if (input === "w") {
        this.damage = damage,
           this.recoveryHp = recoveryHp
     }
-  }       const mindStone = new Inventory(`Mind Stone`, 40, 20)
-          const powerStone = new Inventory(`Power Stone`, 40, 20)
-          const realityStone = new Inventory(`Reality Stone`, 25, 20)
-          const spaceStone = new Inventory(`Space Stone`, 40, 40)
-          const timeStone = new Inventory(`Time Stone`, 20, 30)
-          const soulStone = new Inventory(`Soul Stone`, 100, 0)
+  }       const mindStone = new Inventory(`Mind Stone`, 100, 20)
+          const powerStone = new Inventory(`Power Stone`, 100, 20)
+          const realityStone = new Inventory(`Reality Stone`, 100, 20)
+          const spaceStone = new Inventory(`Space Stone`, 100, 40)
+          const timeStone = new Inventory(`Time Stone`, 100, 30)
+          const soulStone = new Inventory(`Soul Stone`, 300, 0)
           const infinityGauntlet = new Inventory(`Infinity Gauntlet`, 100, 100)
+
+          // const inventoryItems = [mindStone, powerStone, realityStone, spaceStone, timeStone, soulStone]
 
          class Enemies {
           constructor(name, health, attack1, attack2, attack3){
@@ -54,7 +52,7 @@ if (input === "w") {
                 const chanceOfEnemyAppearance = Math.ceil(Math.random() * 4)
   /*---------* Player Essentials*-----------*/
              if (chanceOfEnemyAppearance === 2) {
-              while (playerDetails.healthPoints >= 0 ){
+              if (playerDetails.healthPoints > 1 ){
                const enemyhasAppeared = readline.question(`${currentEnemy.name} has appeared. Would you like to run("r") or fight("f")?`)
                const input = readline.prompt()
                if (enemyhasAppeared === "r") {
@@ -78,56 +76,85 @@ if (input === "w") {
                 
                 /*---------* Battle Logic *-----------*/
                 console.log(`${currentEnemy.name} attacks you. Your health is now ${playerDetails.healthPoints -= attackChanceResult[0][0]}`)
-                console.log(`Attack("a"), attack with item from inventory("x") or run("r")?`)
+                console.log(`Attack("a"), attack with item from inventory("i") or run("r")?`)
                 const input = readline.prompt()
                 if (input === "a") {
-                  console.log(`You attack ${currentEnemy.name} back and their health is now at ${currentEnemy.health -= 25}.`) 
-                  if (input === "a") {
-                    console.log(`${currentEnemy.name} hits back and your health is currently at ${playerDetails.healthPoints -= attackChanceResult[0][0]}. You attack ${currentEnemy.name} back and their health is now at ${currentEnemy.health -= 25}. To attack again press "a", attack with item from inventory("x") or run("r")`) 
-                  } // add if statements for different options
+                  while (playerDetails.healthPoints > 0 && currentEnemy.health > 0) {
+                  console.log(`${currentEnemy.name} hits back and your health is currently at ${playerDetails.healthPoints -= attackChanceResult[0][0]}. You attack ${currentEnemy.name} back and their health is now at ${currentEnemy.health -= 25}.`) 
                   readline.prompt()
-                  if (input === "a") {
-                    console.log(`${currentEnemy.name} hits back and your health is currently at ${playerDetails.healthPoints -= attackChanceResult[0][0]}. You attack ${currentEnemy.name} back and their health is now at ${currentEnemy.health -= 50}. To attack again press "a", attack with item from inventory("x") or run("r")`) 
-                  }
-                  readline.prompt()
-                  if (currentEnemy.health === 0){
+                  if (currentEnemy.health < 0){
                     console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
                     console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
                     break
-                  }
+                  } 
+                  if (playerDetails.healthPoints <= 0) {
+                    console.log(`${userName}, ${currentEnemy.name} 'killed you. Try again!`)
+                    playerDetails.isAlive = false
+                    return
+                  }                 
+                  console.log(`To attack again press "a", attack with item from inventory("i") or run("r")`) 
+                }
+                  
+
+                  
                   /*---------* Access Inventory *-----------*/
-                } else if (input === "x"){
-                  console.log(`
-                        ------------------------------------------------------------------------
-                        Inventory Items:
-                        - Mind Stone
-                        - Soul Stone
-                        - Power Stone
-                        - Reality Stone
-                        - Space Stone
-                        - Time Stone
-                        ------------------------------------------------------------------------
-                        Which would you like to use?
-                       press m = Mind Stone
-                       press s = Soul Stone
-                       press p = Power Stone
-                       press re = Reality Stone
-                       press sp = Space Stone
-                       press t = Time Stone
-                        `)
-                      if (input === "m") {
-                        console.log(`${userName} you've chosen the Mind Stone and your current hP is now ${playerDetails.healthPoints += mindStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= mindStone.damage}`)
-                      }if (input === "s"){
-                        console.log(`${userName} you've chosen the Soul Stone ${playerDetails.healthPoints += soulStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= soulStone.damage}`)
-                      }if (input === "p"){
-                        console.log(`${userName} you've chosen the Power Stone ${playerDetails.healthPoints += powerStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= powerStone.damage}`)
-                      }if (input === "re"){
-                        console.log(`${userName} you've chosen the Reality ${playerDetails.healthPoints += realityStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= realityStone.damage}`)
-                      }if (input === "sp"){
-                        console.log(`${userName} you've chosen the Space Stone ${playerDetails.healthPoints += spaceStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= spaceStone.damage}`)
-                      }if (input === "t"){
-                        console.log(`${userName} you've chosen the Time Stone ${playerDetails.healthPoints += timeStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= timeStone.damage}`)
-                      }/*---------* Access Inventory & Choose Item *-----------*/
+               } else if (input === "i"){
+                 console.log(`
+                       ------------------------------------------------------------------------
+                       Inventory Items:
+                       - Mind Stone
+                       - Soul Stone
+                       - Power Stone
+                       - Reality Stone
+                       - Space Stone
+                       - Time Stone
+                       ------------------------------------------------------------------------
+                       Which would you like to use?
+                      press m = Mind Stone
+                      press s = Soul Stone
+                      press p = Power Stone
+                      press re = Reality Stone
+                      press sp = Space Stone
+                      press t = Time Stone
+                       `)
+                     const input = readline.prompt()
+                     if (input === "m") {
+                       console.log(`${userName} you've chosen the Mind Stone and your current hP is now ${playerDetails.healthPoints += mindStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= mindStone.damage}`)
+                      if (currentEnemy.health === 0){
+                        console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
+                        console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
+                      }        
+                     }if (input === "s"){
+                       console.log(`${userName} you've chosen the Soul Stone ${playerDetails.healthPoints += soulStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= soulStone.damage}`)
+                       if (currentEnemy.health === 0){
+                        console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
+                        console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
+                      } 
+                     }if (input === "p"){
+                       console.log(`${userName} you've chosen the Power Stone ${playerDetails.healthPoints += powerStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= powerStone.damage}`)
+                       if (currentEnemy.health === 0){
+                        console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
+                        console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
+                      } 
+                     }if (input === "re"){
+                       console.log(`${userName} you've chosen the Reality ${playerDetails.healthPoints += realityStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= realityStone.damage}`)
+                       if (currentEnemy.health === 0){
+                        console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
+                        console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
+                      } 
+                     }if (input === "sp"){
+                       console.log(`${userName} you've chosen the Space Stone ${playerDetails.healthPoints += spaceStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= spaceStone.damage}`)
+                       if (currentEnemy.health === 0){
+                        console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
+                        console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
+                      } 
+                     }if (input === "t"){
+                       console.log(`${userName} you've chosen the Time Stone ${playerDetails.healthPoints += timeStone.recoveryHp} and ${currentEnemy.name}'s health is at ${currentEnemy.health -= timeStone.damage}`)
+                       if (currentEnemy.health === 0){
+                        console.log(`Amazing, ${userName}! ${currentEnemy.name} is now dead. Let's keep going!`)
+                        console.log(`Since, you beat ${currentEnemy.name} you've recieved the ${infinityGauntlet.name}.`)
+                      } 
+                     }/*---------* Access Inventory & Choose Item *-----------*/
                 
                 
                    } if (input === "r"){
@@ -141,19 +168,19 @@ if (input === "w") {
                     break
                   }
                 }
+                
               }  
-            }
+            } 
           }
         }
         if (input === "q") {
           return 
         } 
-}
+} 
    
 
 /*---------* End of RPG *-----------*/
   
-
 
   
 

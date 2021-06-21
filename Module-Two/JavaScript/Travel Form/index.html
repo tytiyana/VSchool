@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form id="travel-form">
+            <div id="full-name">
+                <label>First Name</label>
+                <input type="text" id="first-name" class="name" placeholder="First Name">
+                <label>Last Name</label>
+                <input type="text" id="last-name" class="name" placeholder="Last Name">
+            </div>
+
+            <div id="age-value">
+                <label>Age: </label>
+                <input type="number" id="age-number" class="age" placeholder="Age">
+            </div>
+
+            <div id="gender-choice">
+                <span>Gender:</span>
+                <select name="gender" id="gender">
+                    <option value="Female">
+                        Female
+                    </option>
+                    <option value="Male">
+                        Male
+                    </option>
+                    <option value="Non-Binary">
+                        Non-Binary
+                    </option>
+                </select>
+            </div>
+
+            <div id="travel-location">
+                <span>Destinations:</span>
+                <select name="destinations" id="location">
+                    <option value="New York, NY">
+                        New York City, NY
+                    </option>
+                    <option value="Los Angeles, CA">
+                        Los Angeles, CA
+                    </option>
+                    <option value="Washington, DC">
+                        Washington, DC
+                    </option>
+                    <option value="Chicago, IL">
+                        Chicago, IL
+                    </option>
+                    <option value="Houston, TX">
+                        Houston, TX
+                    </option>
+                </select>
+            </div>
+
+            <div id="diet-restrict">
+                <span>Dietary Restrictions: </span>
+                <select name="diet" id="diet">
+                    <option value="Unrestricted">
+                        Unrestricted
+                    </option>
+                    <option value="Vegetarian">
+                        Vegetarian
+                    </option>
+                    <option value="Vegan">
+                        Vegan
+                    </option>
+                    <option value="Pescatarian">
+                        Pescatarian
+                    </option>
+                    <option value="Gluten-free">
+                        Gluten-Free
+                    </option>
+                </select>
+                <button id="submit">Submit</button>   
+            </div>
+          
+        </form>
+        <script src="app.js"></script>
+    </body>
+</html>

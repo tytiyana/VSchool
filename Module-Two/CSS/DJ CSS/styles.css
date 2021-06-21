@@ -1,0 +1,86 @@
+#one{
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    transition: background-color 1s, height 1s, width 1s, box-shadow 1s;
+}
+
+#one:hover{
+    background-color: pink;
+    height: 500px;
+    width: 500px;
+    box-shadow: mediumvioletred;
+    border: inset palevioletred;
+}
+
+#two{
+    height: 300px;
+    width: 300px;
+    background-color: yellow;
+    transition: background-color 1s, height 1s, width 1s;
+}
+
+#two:hover{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(72, 162, 247);
+    border: inset darkblue;
+}
+
+#three{
+    height: 300px;
+    width: 300px;
+    background-color: orange;
+    transition: background-color 2s, height 2s, width 2s;
+}
+
+#three:hover{
+    height: 700px;
+    width: 700px;
+    background-color: violet;
+    border: inset rebeccapurple;
+}
+
+#four{
+    height: 300px;
+    width: 300px;
+    background-color: green;
+    transition: background-color 2s, height 2s, width 2s, opacity 2s;
+
+}
+
+#four:hover{
+    opacity: 50%;
+    height: 400px;
+    width: 400px;
+    background-color: skyblue;
+    border: inset slateblue;
+}
+
+#five{
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+    transition: background-color 1s, height 1s, width 1s;
+}
+
+#five:hover{
+    height: 500px;
+    width: 500px;
+    background-color: purple;
+    border: inset indigo;
+}
+
+#six{
+    height: 300px;
+    width: 300px;
+    background-color: indigo;
+    transition: background-color 1s, height 1s, width 1s;
+}
+
+#six:hover{
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+    border: inset yellowgreen;
+}

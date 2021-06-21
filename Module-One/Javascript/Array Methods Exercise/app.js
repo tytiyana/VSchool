@@ -37,3 +37,7 @@ console.log(split)
 return("Done")
 }
 console.log(arrayMethods())
+
+const contained = document.getElementById("container")
+contained.style.backgroundColor = "red"
+contained.textContent = "Hey"

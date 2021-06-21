@@ -58,7 +58,7 @@ if (input === "w") {
                if (enemyhasAppeared === "r") {
                  const chanceOfEscape = Math.ceil(Math.random() * 2)
                  if (chanceOfEscape === 1) {
-                   console.log(`Great, ${userName} you've escaped. You took 20 hit points.`)
+                   console.log(`Great, ${userName} you've escaped. You took 20pt damage.`)
                    console.log(`Your current Health is at ${playerDetails.healthPoints -= 20}`)
                  } else {
                    console.log(`${userName}, ${currentEnemy.name} captured and killed you.`)
@@ -162,10 +162,8 @@ if (input === "w") {
                     if (chanceOfEscape === 1) {
                     console.log(`Great, ${userName} you've escaped. You took 20 hit points.`)
                     console.log(`Your current Health is at ${playerDetails.healthPoints -= 20}`)
-                    break
                   } else {
                     console.log(`Awesome, You got away without taking any damage.`)
-                    break
                   }
                 }
                 

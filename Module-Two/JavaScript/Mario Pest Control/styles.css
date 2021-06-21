@@ -1,0 +1,27 @@
+*{
+    background-color: cornsilk;
+
+}
+
+header{
+    margin-left: 550px;
+}
+
+#bomb{
+    height: 300px;
+    width: 300px ;
+}
+
+#goomba{
+    height: 300px;
+    width: 300px ;
+}
+
+#cheep{
+    height: 300px;
+    width: 300px ;
+}
+
+#final-price{
+    font-size: 24px;
+}

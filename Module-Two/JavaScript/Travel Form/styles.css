@@ -1,0 +1,38 @@
+body{
+    background-color: palegoldenrod;
+}
+#travel-form{
+    margin-top: 250px;
+    margin-left: 450px;
+}
+
+#full-name{
+    color: red;
+    font-size: 24px;
+}
+
+#age-value{
+    color: orange;
+    font-size: 24px;
+}
+
+#gender-choice{
+    color: yellow;
+    font-size: 24px;
+}
+
+#travel-location{
+    color: green;
+    font-size: 24px;
+}
+
+#diet-restrict{
+    color: blue;
+    font-size: 24px;
+}
+
+#submit{
+    color: indigo;
+    font-size: 24px;
+}
+

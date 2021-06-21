@@ -1,0 +1,84 @@
+{
+	"menu": {
+		"appetizers": [{
+				"name": "loaded nachos",
+				"ingredients": ["tortilla chips", "mixed cheese", "queso", "green onions", "jalapenos", "guacomole", "sour cream"],
+				"description": "our signature nachos made with locally sourced ingredients"
+			},
+			{
+				"name": "mozzarella sticks",
+				"ingredients": ["mozzarella cheese", "marinara sauce", "breading"],
+				"description": "mozzarella sticks made with imported mozzarella cheese"
+			},
+			{
+				"name": "spinach & turkey pinwheels",
+				"ingredients": ["turkey", "spinach", "provolone cheese", "tortilla", "salami"],
+				"description": "bite size wraps made to satisfy your appetite"
+			}
+		],
+		"coldSandwiches": [{
+				"name": "italian BLT",
+				"ingredients": ["proscuitto", "arugula", "tomato", "lettuce", "bacon"],
+				"description": "proscuitto and bacon on sourdough bread"
+			},
+			{
+				"name": "sweet onion chicken teriyaki",
+				"ingredients": ["teriyaki chicken", "cucumbers", "tomato", "lettuce", "spinach", "sweet onion sauce"],
+				"description": "our sweet onion chicken teriyaki sandwich is stuffed with teriyaki-glazed chicken strips topped with our own fat-free sweet onion sauce."
+			},
+			{
+				"name": "tuna",
+				"ingredients": ["onions", "tuna", "cucumbers", "tomato", "lettuce"],
+				"description": "You’ll love every bite of our classic tuna sandwich. 100% wild caught tuna blended with creamy mayo then topped with your choice of crisp, fresh veggies. 100% delicious."
+			}
+		],
+		"hotSandwiches": [{
+				"name": "meatball marinara",
+				"ingredients": ["meatballs", "marinara sauce", "provolone cheese", "parmesan"],
+				"description": "The Meatball Marinara sandwich is drenched in irresistible marinara sauce, sprinkled with Parmesan cheese, topped with whatever you want (no judgement) and perfectly toasted just for you."
+			},
+			{
+				"name": "cheesesteak",
+				"ingredients": ["american cheese", "provolone cheese", "shaved steak", "mayo", "lettuce", "tomato", "caramellized onion"],
+				"description": "Our Steak & Cheese sandwich is where warm, delicious steak gets topped with melty cheesiness. Get crazy with veggies and sauces to make it what you want"
+			},
+			{
+				"name": "oven roasted chicken",
+				"ingredients": ["chicken breast filet", "tomato", "lettuce", "cucumbers", "red onions"],
+				"description": "The Oven Roasted Chicken sandwich is warm, with savory chicken on freshly baked bread with your choice of veggies"
+			}
+		],
+		"desserts": [{
+				"name": "chocolate chip cookies",
+				"ingredients": ["chocholate chips", "cookie dough"],
+				"description": "gooey chocolate chip cookies"
+			},
+			{
+				"name": "cheesecake",
+				"ingredients": ["graham cracker crust", "cheese cake filling"],
+				"description": "NY style cheesecake"
+			},
+			{
+				"name": "coconut cake",
+				"ingredients": ["coconut", "yellow cake", "white butter cream frosting"],
+				"description": "tropical coconut cake"
+			}
+		],
+		"drinks": [{
+				"name": "strawberry banana smoothie",
+				"ingredients": ["strawberry", "banana", "yogurt", "orange juice", "turbinado sugar"],
+				"description": "beloved strawberry banana smoothie"
+			},
+			{
+				"name": "mango smoothie",
+				"ingredients": ["mango", "mango nectar", "almond milk", "yogurt", "turbinado sugar"],
+				"description": "a mango lover's dream"
+			},
+			{
+				"name": "mixed fruit smoothie",
+				"ingredients": ["strawberry", "pineapple", "peach", "mango", "orange juice", "honey", "turbinado sugar"],
+				"description": "Start your day on a refreshing and delicious note by sipping on a naturally sweetened smoothie! Our Mixed Fruit Smoothie is full of yummy fruits and bright colors that kids of all ages will get excited about."
+			}
+		]
+	}
+}

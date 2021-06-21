@@ -1,0 +1,23 @@
+
+#addition {
+    display: block;
+    color: red;
+    margin-top: 250px;
+    margin-left: 550px;
+    font-size: 35px;
+}
+
+
+#subtraction {
+    display: block;
+    color: blue;
+    margin-left: 550px;
+    font-size: 35px;
+}
+
+#multiplication {
+    display: block;
+    color: green;
+    margin-left: 550px;
+    font-size: 35px;
+}

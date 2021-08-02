@@ -10,8 +10,8 @@ function listTodos(data) {
     clearList()
     for (let i = 0; i < data.length; i++) {
         const list = document.getElementById(`todo-list`)
-        const h1 = document.createElement(`h1`)
-        h1.textContent = data[i].title
+        const span = document.createElement(`span`)
+        span.textContent = `${data[i].title} `
 
         const checkbox = document.createElement(`input`)
         checkbox.type = `checkbox`
@@ -19,12 +19,13 @@ function listTodos(data) {
 
         checkbox.addEventListener(`change`, function(){
             if (checkbox.checked === true){
-                h1.style.textDecoration = "line-through"
+                span.style.textDecoration = `line-through`
                 axios.put(`https://api.vschool.io/tytiyana/todo/${data[i]._id}`, {completed: true})
                 .then(response => response.data)
                 .catch(error => console.log(error))        
             } else {
-                checkbox.checked === false 
+                checkbox.checked === false
+                span.style.textDecoration = `none`
                 axios.put(`https://api.vschool.io/tytiyana/todo/${data[i]._id}`, {completed: false})
                 .then(response => response.data)
                 .catch(error => console.log(error))        
@@ -36,13 +37,13 @@ function listTodos(data) {
         editButton.setAttribute(`class`, `edit`)
 
         const titleTwo = document.createElement(`input`)
-        titleTwo.placeholder = `title`
+        titleTwo.placeholder = `${data[i].title}`
         const descriptionTwo = document.createElement(`input`)
-        descriptionTwo.placeholder = `description`
+        descriptionTwo.placeholder = `${data[i].description}`
         const priceTwo = document.createElement(`input`)
-        priceTwo.placeholder = `price`
+        priceTwo.placeholder = `${data[i].price}`
         const imgUrlTwo = document.createElement(`input`)
-        imgUrlTwo.placeholder = `imgUrl`
+        imgUrlTwo.placeholder = `${data[i].imgUrl}`
         const submitEdit = document.createElement(`button`)
         submitEdit.textContent = `Submit`
         submitEdit.setAttribute(`id`, `submitEdit`)
@@ -73,7 +74,7 @@ function listTodos(data) {
         deleteButton.textContent = `delete`
         deleteButton.setAttribute(`class`, `delete`)
 
-        deleteButton.addEventListener("click", function deleteItem(){
+        deleteButton.addEventListener(`click`, function deleteItem(){
             axios.delete(`https://api.vschool.io/tytiyana/todo/${data[i]._id}`)
                .then(response => {
                    console.log(`Your Item was deleted`)
@@ -83,18 +84,22 @@ function listTodos(data) {
            } )
 
         const spanOne = document.createElement(`span`)
-        spanOne.textContent = `${data[i].description} `
+        spanOne.textContent = ` Description: ${data[i].description} `
 
         const spanTwo = document.createElement(`span`)
-        spanTwo.textContent = `${data[i].price} `
+        spanTwo.textContent = `Price: $${data[i].price} `
+
+        const spanThree = document.createElement(`span`)
+        spanThree.textContent = `Image Url: ${data[i].imgUrl} `
         
         const divTwo = document.createElement(`div`)
-        list.appendChild(h1)
         list.appendChild(checkbox)
-        list.appendChild(editButton)
-        list.appendChild(deleteButton)
+        list.appendChild(span)
         list.appendChild(spanOne)
         list.appendChild(spanTwo)
+        list.appendChild(spanThree)
+        list.appendChild(editButton)
+        list.appendChild(deleteButton)
         list.appendChild(divTwo)
 
     }
@@ -136,13 +141,3 @@ function clearList() {
         clearIt.removeChild(clearIt.firstChild)
     }
 }
-
-
-
-
-
-
-
-
-
-

@@ -3,12 +3,16 @@ readline.setDefaultOptions({limit: [`w`, `i`,`q`,`f`,`r`,`a`,`m`, `s`, `p`, `re`
 const userName = readline.question(`May I have your name?`, {limit:[null]})
 console.log(`Hello ${userName}! Welcome to the Avengers. My name is 'Jarvis'. I'll be training you before your mission. We've heard a lot about your abilities from Agent Coulson. When you arrived to Avengers Headquarters, you were placed in a simulation. This is the beginning of your training. As you navigate through this simulation enemies will appear at random and you'll be given the choice to fight or run. If you fight and die, you will start over. If you run and don't manage to escape, you will start over. If you fight and win, you will continue on and if you successfully escape, you will continue on. If this ever becomes too much, you may quit but you will lose all progress and need to start over when you are ready. Good luck and just remember, the world needs you. Once you pass your training you will offically be an Avenger and you will protect the world at any cost. Start by walking.
 Use "w" to walk, "i" to check your inventory, "f" to fight, "r" to run, and "q" to quit at anytime. Once you've read a statement, press return to continue.`)
-  /*---------* Beginning of RPG *-----------*/
+
+
+  //*---------* Beginning of RPG *-----------*//
   const playerDetails = {
     name: `${userName}`,
     healthPoints: 100,
     isAlive: true
-  }  // can't figure out how to get this to work or the inventory. Or a way of implementing an add to the current inventory or removal of an item after use. Once you die game ends.
+  }  // can't figure out how to get this to work or the inventory. Or a way of implementing an add to the current inventory or removal of an item after use. Once you die game ends. //
+
+
 while (playerDetails.healthPoints >= 1) {
 const input = readline.prompt()
 if (input === "w") {

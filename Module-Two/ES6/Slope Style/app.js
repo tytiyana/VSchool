@@ -53,7 +53,40 @@ const realAnimals = ["dog", "cat", "mouse"];
 const magicalAnimals = ["jackolope"];
 const mysteriousAnimals = ["platypus"];
 
+const arr1 = [1,2,3]
+const arr2 = [4,5,6]
+const arr3 = [...arr1,...arr2]
+
+const obj1 = {
+  name: "john",
+  age: 24
+}
+
+const obj2 = { 
+  color: "Blue", 
+  food: "Pizza",
+  ...obj1
+}
+
+/*
+ {  name: "john",
+    age: 24, 
+    color: "Blue",
+    food: "Pizza"
+ }
+
+*/
+
+const obj3 = { 
+  ...obj1, 
+  ...obj2
+}
+
 function combineAnimals(...animals) {  
+
+  // map through array of arrays 
+  // spread each array to a new array 
+  // return animals.map(animalArr => [...animalArr])
  return animals.concat(realAnimals,magicalAnimals,mysteriousAnimals)
 }
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
-
+import "./styles.css"
 
 import Meme from './Meme'
 const axios = require('axios')
+const random = Math.floor(Math.random() * 100)
 
 class App extends Component{
     constructor(){
@@ -23,31 +24,34 @@ class App extends Component{
         .then(data => {
             const memeData = data.data.memes
             this.setState({
-                meme: [...memeData]
+                meme: memeData
             })
         })
     }
 
     handleSubmit(){
-
+        
     }
 
-    handleChange(event){
-        const {name, value} = event.target
+    handleChange(e){
+        e.preventDefault()
+        const {name, value} = e.target
         this.setState({
             [name]: value
         }) 
     }
 
     render(){
-        const memes = this.state.meme.map(info => <Meme url={info.url} name={info.name}/>)
-        const memesss = memes.sort(() => Math.random() - 0.5)
+        const memes = this.state.meme.map(info => <Meme url={info.url}/>)
+        
+        
+
         return(
             <div>
-                <h1>{this.state.topText}</h1>
-                {memes[0]}
-                <h1>{this.state.bottomText}</h1>
-                <button onClick={()=>{window.location.reload()}}>Next</button>
+
+                <h1 id="top">{this.state.topText}</h1>
+                {memes[random]}
+                <h1 id="bottom">{this.state.bottomText}</h1>
 
                 <form onSubmit={this.handleSubmit}>
                 <input 

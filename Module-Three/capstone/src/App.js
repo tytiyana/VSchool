@@ -30,7 +30,9 @@ class App extends Component{
     }
 
     handleSubmit(){
-        
+        this.setState(prevState => ({
+         meme: [...prevState.meme, this.state.topText, this.state.bottomText]
+        }))
     }
 
     handleChange(e){
@@ -42,13 +44,12 @@ class App extends Component{
     }
 
     render(){
-        const memes = this.state.meme.map(info => <Meme url={info.url}/>)
+        const memes = this.state.meme.map(info => <Meme url={info.url} topText={this.state.topText} bottomText={this.state.bottomText}/>)
         
         
 
         return(
             <div>
-
                 <h1 id="top">{this.state.topText}</h1>
                 {memes[random]}
                 <h1 id="bottom">{this.state.bottomText}</h1>

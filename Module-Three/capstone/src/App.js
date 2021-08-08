@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
-
 import "./styles.css"
-
 import Meme from './Meme'
+import NewMeme from './NewMeme'
+
 const axios = require('axios')
+
+
 const random = Math.floor(Math.random() * 100)
 
 class App extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             meme: [],
             topText: "",
-            bottomText: ""
+            bottomText: "",
+            url: "",
+            createdMemes: [],
+            createdMemeData: {
+                topText: "",
+                bottomText: "",
+                url: ""
+            }
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.editMeme = this.editMeme.bind(this)
+        this.deleteMeme = this.deleteMeme.bind(this)
     }
 
     componentDidMount(){
@@ -29,32 +40,43 @@ class App extends Component{
         })
     }
 
-    handleSubmit(){
-        this.setState(prevState => ({
-         meme: [...prevState.meme, this.state.topText, this.state.bottomText]
+    handleSubmit(e){
+        e.preventDefault()
+        this.setState(prev => ({
+            createdMemeData: {
+                ...prev.createdMemeData, 
+                topText: prev.topText,
+                bottomText: prev.bottomText,
+                url: prev.meme[random].url
+            }, createdMemes: [...prev.createdMemes, this.state.createdMemeData]
         }))
     }
 
     handleChange(e){
-        e.preventDefault()
         const {name, value} = e.target
         this.setState({
             [name]: value
         }) 
     }
 
-    render(){
-        const memes = this.state.meme.map(info => <Meme url={info.url} topText={this.state.topText} bottomText={this.state.bottomText}/>)
-        
-        
+    editMeme(){
+    
+    }
 
+    deleteMeme(){
+        this.setState(this.state.createdMemes.splice(this.state.createdMemes.index, 1))
+    }
+
+    render(){
+        const memes = this.state.meme.map((info,index) => <Meme key={index}url={info.url} topText={this.state.topText} bottomText={this.state.bottomText}/>)
+
+        const newMeme = this.state.createdMemes.map((info,index) => <NewMeme key={index} url={this.state.createdMemeData.url} topText={this.state.createdMemeData.topText} bottomText={this.state.createdMemeData.bottomText} edit={this.editMeme} delete={this.deleteMeme}/>)
+        
         return(
             <div>
-                <h1 id="top">{this.state.topText}</h1>
                 {memes[random]}
-                <h1 id="bottom">{this.state.bottomText}</h1>
-
-                <form onSubmit={this.handleSubmit}>
+                {newMeme}
+                <form  onSubmit={this.handleSubmit}>
                 <input 
                 type="text" 
                 name="topText" 
@@ -75,4 +97,3 @@ class App extends Component{
 }
 
 export default App
-

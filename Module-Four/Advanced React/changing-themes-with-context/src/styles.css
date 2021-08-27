@@ -1,0 +1,72 @@
+.dark-theme {
+    background-color: #333333;
+    color: whitesmoke;
+}
+
+.light-theme {
+    background-color: whitesmoke;
+    color: #333333;
+}
+
+
+.dark-theme button {
+    padding: 10px;
+    border: none;
+    margin-left: 550px;
+    background-color: grey;
+}
+
+.light-theme button{
+  padding: 10px;
+  border: none;
+  margin-left: 550px;
+  background-color: lightgray;
+}
+
+.dark-theme ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: grey
+  }
+
+  .light-theme ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightgray
+  }
+
+  
+  li{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li:hover{
+    background-color: #111;
+    color:white;
+  }
+
+  button:hover{
+    background-color: #111;
+  }
+
+  .light-theme button:hover{
+    background-color: darkgray;
+  }
+
+  h1{
+    display: flex;
+    justify-content: center;
+  }
+
+  h3{
+    display: flex;
+    justify-content: center;
+  }

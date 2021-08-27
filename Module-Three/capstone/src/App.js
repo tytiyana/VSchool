@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import "./styles.css"
 import Meme from './Meme'
 import NewMeme from './NewMeme'
@@ -21,7 +22,9 @@ class App extends Component{
                 topText: "",
                 bottomText: "",
                 url: ""
-            }
+            },
+            newTopText: "",
+            newBottomText: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -42,13 +45,13 @@ class App extends Component{
 
     handleSubmit(e){
         e.preventDefault()
-        this.setState(prev => ({
+        this.setState(() => ({
             createdMemeData: {
-                ...prev.createdMemeData, 
-                topText: prev.topText,
-                bottomText: prev.bottomText,
-                url: prev.meme[random].url
-            }, createdMemes: [...prev.createdMemes, this.state.createdMemeData]
+                ...this.state.createdMemeData, 
+                topText: this.state.topText,
+                bottomText: this.state.bottomText,
+                url: this.state.meme[random].url
+            }, createdMemes: [...this.state.createdMemes, this.state.createdMemeData]
         }))
     }
 
@@ -60,7 +63,16 @@ class App extends Component{
     }
 
     editMeme(){
-    
+       const input = (
+           <div>
+               <form onSubmit={this.submitNewMeme}>
+               <input type="text" name="newTopText" value={this.state.newTopText.value} placeholder="New Top Text"/>
+               <input type="text" name="newBottomText" value={this.state.newBottomText.value} placeholder="New Bottom Text"/>
+               <button>Click</button>
+               </form>
+           </div>
+       )
+       ReactDOM.render(input, document.getElementById("newInputs"))
     }
 
     deleteMeme(){
@@ -70,8 +82,8 @@ class App extends Component{
     render(){
         const memes = this.state.meme.map((info,index) => <Meme key={index}url={info.url} topText={this.state.topText} bottomText={this.state.bottomText}/>)
 
-        const newMeme = this.state.createdMemes.map((info,index) => <NewMeme key={index} url={this.state.createdMemeData.url} topText={this.state.createdMemeData.topText} bottomText={this.state.createdMemeData.bottomText} edit={this.editMeme} delete={this.deleteMeme}/>)
-        
+        const newMeme = this.state.createdMemes.map((info,index) => <NewMeme className="newMeme" key={index} url={this.state.createdMemeData.url} topText={this.state.createdMemeData.topText} bottomText={this.state.createdMemeData.bottomText} edit={this.editMeme} delete={this.deleteMeme}/>)
+
         return(
             <div>
                 {memes[random]}
@@ -79,13 +91,15 @@ class App extends Component{
                 <form  onSubmit={this.handleSubmit}>
                 <input 
                 type="text" 
-                name="topText" 
+                name="topText"
+                value={this.state.topText.value} 
                 onChange={this.handleChange}
                 placeholder="Top text"
                 />
                 <input 
                 type="text" 
-                name="bottomText" 
+                name="bottomText"
+                value={this.state.bottomText.value} 
                 onChange={this.handleChange}
                 placeholder="Bottom text"
                 />

@@ -1,0 +1,21 @@
+#movieBlock{
+    border: solid 1px;
+}
+
+#delete{
+    color: whitesmoke;
+    background-color:firebrick;
+    font-size: 16px;
+    padding: 5px;
+}
+
+#edit{
+    color: whitesmoke;
+    background-color:green;
+    font-size: 16px;
+    padding: 5px;
+}
+
+form{
+    border: solid 1px; 
+}

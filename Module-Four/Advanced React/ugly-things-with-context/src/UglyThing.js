@@ -2,13 +2,17 @@ import React from 'react'
 
 function UglyThing(props){
     return(
-            <div>
-                <p>{props.title || props.newTitle}</p>
-                <p>{props.description || props.newDescription}</p>
-                <img style={{height: 300, width:200}} src={props.imgUrl || props.newImgUrl}  alt={props.title}/>
+            <div className="uglyThing">
+                <div className="details">
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+                </div>
+                <img src={props.imgUrl}  alt={props.title}/>
+                <div className="buttons">
                 <button onClick={() => props.edit(props.id)}>Edit</button>
-                <div id="newInputs"></div>
                 <button onClick={()=> props.delete(props.id)}>Delete</button>
+                </div>
+                <div id={props.id}></div>
             </div>
     )
 }

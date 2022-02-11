@@ -65,38 +65,25 @@ class ContextProvider extends Component{
     }
 
     editUggaDug = (id) => {
-        const newUggaDug = {
-            title: this.state.newTitle,
-            description: this.state.newDescription,
-            imgUrl: this.state.newImgUrl
-        }
-
         const input = (
-            <div>
+            <>
                 <form>
                 <input onChange={this.handleChange} type="text" name="newImgUrl" value={this.state.newImgUrl.value} placeholder="New Image Url"/>
                 <input onChange={this.handleChange} type="text" name="newTitle" value={this.state.newTitle.value} placeholder="New Title"/>
                 <input onChange={this.handleChange} type="text" name="newDescription" value={this.state.newDescription.value} placeholder="New Description"/>
                 </form>
                 <button onClick={() => {
-                    axios.put(`https://api.vschool.io/tytiyana/thing/${id}`, newUggaDug)
-                    .then(response => {
-                        console.log(response.data)
-                        this.setState({
-                            title: "Hello",
-                            description: "World",
-                            imgUrl: ""
-                        })
-                    })
+                    axios.put(`https://api.vschool.io/tytiyana/thing/${id}`, {title: this.state.newTitle, description: this.state.newDescription, imgUrl: this.state.newImgUrl})
+                    .then(response => console.log(response.data))
                     .catch(err => console.log(err))  
                 }}>Submit</button>
-            </div>
+            </>
         )
-        ReactDOM.render(input, document.getElementById("newInputs"))
+        ReactDOM.render(input, document.getElementById(id))
     }
 
     render(){
-        const uglyThingItem = this.state.uglyThings.map((info) => <UglyThing key={info._id} id={info._id} title={info.title} description={info.description} imgUrl={info.imgUrl} edit={this.editUggaDug} delete={this.deleteUggaDug}/>)
+        const uglyThingItem = this.state.uglyThings.map((info) => <UglyThing className={"uglyThings"} key={info._id} id={info._id} title={info.title} description={info.description} imgUrl={info.imgUrl} edit={this.editUggaDug} delete={this.deleteUggaDug}/>)
 
         return(
             <Provider value={{

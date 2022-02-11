@@ -6,8 +6,8 @@ function Form(props){
     return(
         <Consumer>
             {context => (
-                <div>
-                <form>
+                <>
+                <form id="form">
                 <input
                     type="text"
                     name="imgUrl"
@@ -31,7 +31,7 @@ function Form(props){
                 />
                 <button onClick={context.handleSubmit}>Submit</button>
             </form>
-                </div>
+                </>
             )}
         </Consumer>
     )

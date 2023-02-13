@@ -7,3 +7,12 @@
 # 500 - Server Error
 
 # http://http.cat
+
+{
+    firstName: string, 
+    lastName: string,
+    living: Boolean,
+    bountyAmount: Number,
+    type: string,
+    id: uuid()
+}

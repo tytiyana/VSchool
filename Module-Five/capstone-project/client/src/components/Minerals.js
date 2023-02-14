@@ -2,10 +2,11 @@ import React, {useState} from 'react'
 import AddMineralsForm from './AddMineralsForm'
 
 function Mineral(props){
-    const {name, rarity, yearDiscovered, color, mohsHardness, description, _id} = props
+    const {name, rarity, yearDiscovered, color, mohsHardness, description, _id, edit} = props
     const [editToggle, setEditToggle] = useState(false)
     return(
         <div>
+
             { ! editToggle ?
             <>
             <h1>Name: {name}</h1>
@@ -27,8 +28,9 @@ function Mineral(props){
                 color={color}
                 mohsHardness={mohsHardness}
                 description={description}
+                submit={edit}
+                buttonText="Submit"
                 _id={_id}
-                submit={props.edit}
                 /> 
                 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>
             </>

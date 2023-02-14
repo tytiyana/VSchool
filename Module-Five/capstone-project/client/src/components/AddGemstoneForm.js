@@ -59,7 +59,7 @@ function AddGemstoneForm(props){
                 onChange={handleChange}
                 placeholder="description"
             />
-                <button>Submit</button>
+                <button>{props.buttonText}</button>
         </form>
     )
 }

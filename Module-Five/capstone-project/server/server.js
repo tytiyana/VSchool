@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 app.use(express.json())
 app.use(morgan('dev'))
 
-mongoose.connect("mongodb://localhost:27017/elements", () => console.log('connected to database'))
+mongoose.connect("mongodb://localhost:27017/elements", () => console.log('Connected to Database'))
 
 app.use('/minerals', require("./routes/mineralRouter"))
 app.use('/gemstones', require("./routes/gemstoneRouter"))

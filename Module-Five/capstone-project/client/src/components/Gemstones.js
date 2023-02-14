@@ -28,6 +28,7 @@ function Gemstone(props){
                 mohsHardness={mohsHardness}
                 description={description}
                 _id={_id}
+                buttonText="Submit Edit"
                 submit={props.edit}
                 /> 
                 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>

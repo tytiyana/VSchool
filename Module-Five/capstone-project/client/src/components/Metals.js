@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import AddMetalForm from "./AddMetalForm"
+import AddMetalForm from "../components/AddMetalForm"
 
 function Metals(props){
     const {name, rarity, yearDiscovered, meltingPoint, description, _id} = props
@@ -26,6 +26,7 @@ function Metals(props){
                 meltingPoint={meltingPoint}
                 description={description}
                 _id={_id}
+                buttonText="Submit"
                 submit={props.edit}
                 /> 
                 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>

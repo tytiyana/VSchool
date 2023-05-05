@@ -2,38 +2,15 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 import Metals from '../components/Metals'
-import AddMetalForm from '../components/AddMetalForm'
+import AddMetalForm from '../components/forms/AddMetalForm'
 
-function MetalPage () {
-    const [metals, setMetals] =useState([])
-
-    function getMetals(){
-        axios.get("/metals")
-            .then(res => setMetals(res.data))
-            .catch(err => console.log(err))
-    }
-
-    function addMetals(newMetals){
-        axios.post("/metals", newMetals)
-        .then(res => setMetals(prevMetals => [...prevMetals, res.data]))
-        .catch(err => console.log(err))
-    }
-
-    function deleteMetals(metalId){
-        axios.delete(`/metals/${metalId}`)
-            .then(res => setMetals(prevMetals => prevMetals.filter(metal => metal._id !== metalId)))
-            .catch(err => console.log(err))
-    }
-
-    function editMetals(updatedObject, metalId){
-        axios.put(`/metals/${metalId}`, updatedObject)
-            .then(res => setMetals(prevMetals => prevMetals.map(metal => metal._id !== metalId ? metal : res.data)))
-            .catch(err => console.log(err))
-    }
+function MetalPage (props) {
+    const {metals, getUserMetals, addMetals, deleteMetals, editMetals} = props
 
     useEffect(() => {
-        getMetals()
+        getUserMetals()
     }, [])
+
 
     return(
         <div>

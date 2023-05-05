@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("https://i.ibb.co/0F95nwt/background.png");
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+    color: #F596CA;
+}
+
+a:hover{
+    color: #bfa4f6 ;
+}
+
+a:active{
+    color: #05d4d4;
+}
+
+a:hover, a:active {
+    font-size: 150%;
+  }
+
+ul{
+    list-style-type: none;
+}
+
+#nav-items{
+    display: flex;
+    gap: 75px;
+    align-items:center;
+    justify-content: flex-end;
+    border: solid 1px;
+}
+
+#navbar{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 24px;
+}
+
+#experience{
+    font-family: 'Fredoka', sans-serif;
+    color: #afe1ff;
+}
+
+#title{
+    font-family: 'Fredoka', sans-serif;
+    color: #ed8e26;
+}
+
+#date{
+    font-family: 'Fredoka', sans-serif;
+    color: #fff1ba;
+}
+
+.list-items{
+    font-family: 'Apple Juice';
+    color: #F596CA;
+}

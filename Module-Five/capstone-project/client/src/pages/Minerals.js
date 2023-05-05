@@ -4,36 +4,11 @@ import axios from 'axios'
 import Mineral from '../components/Minerals'
 import AddMineralsForm from '../components/AddMineralsForm'
 
-function MineralPage() {
-    const [minerals, setMinerals] = useState([])
-
-    function getMinerals(){
-        axios.get("/minerals")
-        .then(res => setMinerals(res.data))
-        .catch(err => console.log(err))
-    }
-
-    function addMinerals(newMinerals){
-        axios.post("/minerals", newMinerals)
-        .then(res => setMinerals(prevMinerals => [...prevMinerals, res.data]))
-        .catch(err => console.log(err))
-    }
-
-
-    function deleteMinerals(mineralId){
-        axios.delete(`/minerals/${mineralId}`)
-            .then(res => setMinerals(prevMinerals => prevMinerals.filter(mineral => mineral._id !== mineralId)))
-            .catch(err => console.log(err))
-    }
-
-    function editMinerals(updatedObject, mineralId){
-        axios.put(`/minerals/${mineralId}`, updatedObject)
-            .then(res => setMinerals(prevMinerals => prevMinerals.map(mineral => mineral._id !== mineralId ? mineral : res.data)))
-            .catch(err => console.log(err))
-    }
+function MineralPage(props) {
+    const {minerals, getUserMinerals, addMinerals, deleteMinerals, editMinerals} = props
 
     useEffect(() => {
-        getMinerals()
+        getUserMinerals()
     }, [])
 
     

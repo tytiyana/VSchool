@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
-import AddMineralsForm from './AddMineralsForm'
+import React, {useState, useContext} from 'react'
+import AddMineralsForm from './forms/AddMineralsForm'
+import { UserContext } from '../context/UserProvider'
 
 function Mineral(props){
-    const {name, rarity, yearDiscovered, color, mohsHardness, description, _id, edit} = props
+    const {name, rarity, yearDiscovered, color, mohsHardness, description, _id} = props
+    const {deleteMinerals, editMinerals} = useContext(UserContext)
     const [editToggle, setEditToggle] = useState(false)
     return(
         <div>
@@ -16,7 +18,7 @@ function Mineral(props){
             <h3>Mohs Hardness: {mohsHardness}</h3>
             <h3>Description: {description}</h3>
 
-            <button onClick={() => props.delete(_id)}>Delete</button>
+            <button onClick={() => deleteMinerals(_id)}>Delete</button>
             <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
             </>
             :
@@ -28,7 +30,7 @@ function Mineral(props){
                 color={color}
                 mohsHardness={mohsHardness}
                 description={description}
-                submit={edit}
+                submit={editMinerals}
                 buttonText="Submit"
                 _id={_id}
                 /> 

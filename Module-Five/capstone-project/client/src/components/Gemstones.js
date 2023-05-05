@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
-import AddGemstoneForm from './AddGemstoneForm'
+import React, {useState, useContext} from 'react'
 
-function Gemstone(props){
+import { UserContext } from '../context/UserProvider'
+import AddGemstoneForm from '../components/forms/AddGemstoneForm'
+
+export default function Gemstone(props){
     const {name, rarity, yearDiscovered, color, mohsHardness, description, _id} = props
+    const {deleteGemstones, editGemstones} = useContext(UserContext)
     const [editToggle, setEditToggle] = useState(false)
     return(
         <div>
@@ -15,7 +18,7 @@ function Gemstone(props){
             <h3>Mohs Hardness: {mohsHardness}</h3>
             <h3>Description: {description}</h3>
 
-            <button onClick={() => props.delete(_id)}>Delete</button>
+            <button onClick={() => deleteGemstones(_id)}>Delete</button>
             <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
             </>
             :
@@ -29,7 +32,7 @@ function Gemstone(props){
                 description={description}
                 _id={_id}
                 buttonText="Submit Edit"
-                submit={props.edit}
+                submit={editGemstones}
                 /> 
                 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>
             </>
@@ -37,5 +40,3 @@ function Gemstone(props){
         </div>
     )
 }
-
-export default Gemstone

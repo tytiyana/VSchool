@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
-import AddMetalForm from "../components/AddMetalForm"
+import React, {useState, useContext} from 'react'
+import AddMetalForm from "./forms/AddMetalForm"
+import { UserContext } from '../context/UserProvider'
 
 function Metals(props){
     const {name, rarity, yearDiscovered, meltingPoint, description, _id} = props
+    const {deleteMetals, editMetals} = useContext(UserContext)
     const [editToggle, setEditToggle] = useState(false)
     return(
         <div>
@@ -14,7 +16,7 @@ function Metals(props){
             <h3>Melting Point: {meltingPoint}</h3>
             <h3>Description: {description}</h3>
 
-            <button onClick={() => props.delete(_id)}>Delete</button>
+            <button onClick={() => deleteMetals(_id)}>Delete</button>
             <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
             </>
             :
@@ -27,7 +29,7 @@ function Metals(props){
                 description={description}
                 _id={_id}
                 buttonText="Submit"
-                submit={props.edit}
+                submit={editMetals}
                 /> 
                 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>
             </>

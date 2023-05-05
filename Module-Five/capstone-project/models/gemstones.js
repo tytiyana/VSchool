@@ -1,0 +1,36 @@
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const gemstoneSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    rarity: {
+        type: String,
+        required: true
+    },
+    yearDiscovered: {
+        type: String,
+        required: true
+    },
+    color:{
+        type: String,
+        required: true
+    },
+    mohsHardness:{
+        type: Number,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    }
+})
+
+module.exports = mongoose.model('Gemstone', gemstoneSchema)

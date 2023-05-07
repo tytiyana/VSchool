@@ -3,61 +3,750 @@
     padding: 0;
 }
 
-body{
-    background-image: url("https://i.ibb.co/0F95nwt/background.png");
-    background-repeat: no-repeat;
+@media screen and (max-width: 767px) {
+    body{
+        background-image: url("https://i.ibb.co/Ypb8mNV/Website-Motivational-Phone-Wallpaper-1620-2160-px.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    
+    /* !Header CSS */
+    
+    .a{
+        text-decoration: none;
+        color: #F596CA;
+    }
+    
+    .a:hover, a:active {
+        font-size: 150%;
+        color: #bfa4f6;
+      }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    #logo img {
+        margin-right: 20px;
+        height: 100px;
+        width: 100px;
+    }
+    
+    #nav-items{
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 15px;
+    }
+    
+    #navbar{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 20px;
+    }
+    
+    /* !Socials Bar CSS */
+    
+    #socialsBar{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-direction: row;
+        
+    }
+    
+    #contact-specific{
+        padding-left: 20px;
+    }
+    
+    /* !Home Page CSS */
+    
+    #name{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 100px;
+        display: inline-block;
+        margin-top: 100px;
+        color: #F596CA;
+    }
+    
+    #name:hover, #name:active{
+       color: #05D4D4;
+    }
+    
+    #name-center{
+      text-align: center;
+    }
+    
+    #title-center{
+        text-align: center;
+    }
+    
+    #job-title{
+        font-family: 'Apple Juice';
+        font-size: 36px;
+        display: inline-block;
+        color: #F596CA;
+    }
+    
+    #job-title:hover, #job-title:active{
+        color: #ED8E26;
+    }
+    
+    /*! About Page CSS */
+    #about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    hr{
+        border: 5px solid;
+        border-color: #e1ffbb;
+        border-radius: 5px;
+      }
+    
+    #photo-of-me{
+        display: inline-block;
+        height: 375px;
+    }
+    
+    #about-title{
+        display: inline-block;
+        font-family: 'Fredoka', sans-serif;
+        padding: 20px;
+        font-size: 48px;
+        color: #afe1ff;
+    }
+    
+    .about-me{
+        display: inline-block;
+        font-family: 'Apple Juice';
+        padding: 10px;
+        font-size: 18px;
+        color: #ED8E26;
+    }
+    
+    #about-box{
+        display: inline-block;
+        height: 450px;
+        width: 450px;
+    }
+    
+    /*! Experience Page CSS */
+    #experience-css{
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+    }
+     
+    #experience{
+        font-family: 'Fredoka', sans-serif;
+        color: #afe1ff;
+        font-size: 48px; 
+    }
+    
+    #experience-box{
+        height: 550px;
+        width: 450px;
+    }
+    
+    #title{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 24px;
+        color: #ed8e26;
+    }
+    
+    #date{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 24px;
+        color: #fff1ba;
+    }
+    
+    #skills{
+        height: 250px;
+        width: 250px;
+    }
+    
+    .list-items{
+        font-family: 'Apple Juice';
+        font-size: 20px;
+        color: #F596CA;
+    }
 }
 
-a{
-    text-decoration: none;
-    color: #F596CA;
-}
+   /* ? 768px-1024px */
 
-a:hover{
-    color: #bfa4f6 ;
-}
+   @media screen and (min-width: 768px) and (max-width: 1024px) {
+    body{
+        background-image: url("https://i.ibb.co/R4Fz82v/Website-Motivational-Phone-Wallpaper-1620-2160-px-2160-1620-px-1.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    
+    /* !Header CSS */
+    
+    .a{
+        text-decoration: none;
+        color: #F596CA;
+    }
+    
+    .a:hover, a:active {
+        font-size: 150%;
+        color: #bfa4f6;
+      }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    #logo img {
+        float: left;
+        margin-top: 20px;
+        height: 150px;
+        width: 150px;
+    }
+    
+    
+    #nav-items{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 25px;
+    }
+    
+    #navbar{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 24px;
+    }
+    
+    /* !Socials Bar CSS */
+    
+    #socialsBar{
+        display: flex;
+        gap: 20px;
+        padding-top: 20px;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+    
+    #contact{
+        padding-left: 20px;
+    }
+    
+    /* !Home Page CSS */
+    
+    #name{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 120px;
+        display: inline-block;
+        margin-top: 200px;
+        color: #F596CA;
+    }
+    
+    #name:hover, #name:active{
+       color: #05D4D4;
+    }
+    
+    #name-center{
+      text-align: center;
+    }
+    
+    #title-center{
+        text-align: center;
+    }
+    
+    #job-title{
+        font-family: 'Apple Juice';
+        font-size: 48px;
+        display: inline-block;
+        color: #F596CA;
+    }
+    
+    #job-title:hover, #job-title:active{
+        color: #ED8E26;
+    }
+    
+    /*! About Page CSS */
+    
+    #about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-a:active{
-    color: #05d4d4;
+    hr{
+        border: 5px solid;
+        border-color: #e1ffbb;
+        border-radius: 5px;
+      }
+    
+    #photo-of-me{
+        display: inline-block;
+        height: 400px;
+    }
+    
+    #about-title{
+        display: inline-block;
+        font-family: 'Fredoka', sans-serif;
+        padding: 10px;
+        font-size: 48px;
+        color: #afe1ff;
+    }
+    
+    .about-me{
+        display: inline-block;
+        font-family: 'Apple Juice';
+        padding: 10px;
+        font-size: 20px;
+        color: #ED8E26;
+    }
+    
+    #about-box{
+        display: inline-block;
+        height: 350px;
+        width: 550px;
+    }
+    
+    /*! Experience Page CSS */
+    
+    #experience{
+        font-family: 'Fredoka', sans-serif;
+        color: #afe1ff;
+        font-size: 48px; 
+    }
+    
+    #experience-box{
+        display: inline-block;
+        margin: 0px 0px 0px 150px;
+        height: 500px;
+        width: 700px;
+    }
+    
+    #title{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 28px;
+        color: #ed8e26;
+    }
+    
+    #date{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 20px;
+        color: #fff1ba;
+    }
+    
+    #skills{
+        margin-left: 250px;
+    }
+    
+    .list-items{
+        font-family: 'Apple Juice';
+        font-size: 20px;
+        color: #F596CA;
+    }
 }
+  /* ? 1025px-1280px */
 
-a:hover, a:active {
-    font-size: 150%;
-  }
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
 
-ul{
-    list-style-type: none;
-}
+    body{
+        background-image: url("https://i.ibb.co/w631tCF/Website.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    
+    /* !Header CSS */
+    
+    .a{
+        text-decoration: none;
+        color: #F596CA;
+    }
+    
+    .a:hover, a:active {
+        font-size: 150%;
+        color: #bfa4f6;
+      }
+    
+    ul{
+        list-style-type: none;
+    }
+    
+    #logo img {
+        float: left;
+        margin-top: 20px;
+        margin-right: 55px;
+        height: 150px;
+        width: 150px;
+    }
+    
+    #about{
+        margin-left: 200px;
+    }
+    
+    #resume{
+        margin-right: 40px;
+    }
+    
+    #nav-items{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #navbar{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 24px;
+    }
+    
+    /* !Socials Bar CSS */
+    
+    #socialsBar{
+        display: flex;
+        gap: 20px;
+        margin-left: 70px;
+        flex-direction: column;
+        
+    }
+    
+    #socialsBar img:hover, #socialsBar img:active{
+        height: 5%;
+        width: 5%;
+    }
+    
+    #contact{
+        display: flex;
+        
+    }
+    #contact-specific{
+        margin-left: auto;
+        padding-right: 50px;
+    }
+    
+    /* !Home Page CSS */
+    
+    #name{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 120px;
+        display: inline-block;
+        margin-top: 200px;
+        color: #F596CA;
+    }
+    
+    #name:hover, #name:active{
+       color: #05D4D4;
+    }
+    
+    #name-center{
+      text-align: center;
+    }
+    
+    #title-center{
+        text-align: center;
+    }
+    
+    #job-title{
+        font-family: 'Apple Juice';
+        font-size: 48px;
+        display: inline-block;
+        color: #F596CA;
+    }
+    
+    #job-title:hover, #job-title:active{
+        color: #ED8E26;
+    }
+    
+    /*! About Page CSS */
 
-#nav-items{
-    display: flex;
-    gap: 75px;
-    align-items:center;
-    justify-content: flex-end;
-    border: solid 1px;
-}
+    #about{
+        display: flex;
+        align-items: center;
+    }
+    
+    hr{
+        border: 5px solid;
+        border-color: #e1ffbb;
+        border-radius: 5px;
+      }
+    
+    #photo-of-me{
+        display: inline-block;
+        height: 380px;
+        margin-top: 20px;
+    }
+    
+    #about-title{
+        display: inline-block;
+        font-family: 'Fredoka', sans-serif;
+        padding: 20px;
+        margin-bottom: 10px;
+        font-size: 50px;
+        color: #afe1ff;
+    }
+    
+    .about-me{
+        display: inline-block;
+        font-family: 'Apple Juice';
+        padding: 10px;
+        font-size: 24px;
+        color: #ED8E26;
+    }
+    
+    #about-box{
+        display: inline-block;
+        margin-left: 100px;
+        height: 450px;
+        width: 500px;
+    }
+    
+    /*! Experience Page CSS */
+    
+    #experience{
+        font-family: 'Fredoka', sans-serif;
+        color: #afe1ff;
+        font-size: 50px; 
+    }
+    
+    #experience-box{
+        display: inline-block;
+        margin: 0px 0px 0px 140px;
+        height: 400px;
+        width: 500px;
+    }
+    
+    #title{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 20px;
+        color: #ed8e26;
+    }
+    
+    #date{
+        font-family: 'Fredoka', sans-serif;
+        font-size: 18px;
+        color: #fff1ba;
+    }
+    
+    #skills {
+        margin-left: 55px;
+        height: 375px;
+        width: 375px;
+    }
+    
+    .list-items{
+        font-family: 'Apple Juice';
+        font-size: 18px;
+        color: #F596CA;
+    }
+    
+    /*! Projects Page CSS */
+    
+    
+    }
 
-#navbar{
-    font-family: 'Fredoka', sans-serif;
-    font-size: 24px;
-}
+    /*? 1281px+ */
+    
+    @media only screen and (min-width: 1281px){
+ 
+        body{
+            background-image: url("https://i.ibb.co/w631tCF/Website.png");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        /* !Header CSS */
+        
+        .a{
+            text-decoration: none;
+            color: #F596CA;
+        }
+        
+        .a:hover, a:active {
+            font-size: 150%;
+            color: #bfa4f6;
+          }
+        
+        ul{
+            list-style-type: none;
+        }
+        
+        #logo img {
+            float: left;
+            margin-top: 20px;
+            margin-right: 55px;
+            height: 150px;
+            width: 150px;
+        }
+        
+        #about{
+            margin-left: 200px;
+        }
+        
+        #resume{
+            margin-right: 40px;
+        }
+        
+        #nav-items{
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        #navbar{
+            font-family: 'Fredoka', sans-serif;
+            font-size: 24px;
+        }
+        
+        /* !Socials Bar CSS */
+        
+        #socialsBar{
+            display: flex;
+            gap: 20px;
+            margin-left: 70px;
+            flex-direction: column;
+            
+        }
+        
+        #socialsBar img:hover, #socialsBar img:active{
+            height: 5%;
+            width: 5%;
+        }
+        
+        #contact{
+            display: flex;
+            
+        }
+        #contact-specific{
+            margin-left: auto;
+            padding-right: 50px;
+        }
+        
+        /* !Home Page CSS */
+        
+        #name{
+            font-family: 'Fredoka', sans-serif;
+            font-size: 120px;
+            display: inline-block;
+            margin-top: 200px;
+            color: #F596CA;
+        }
+        
+        #name:hover, #name:active{
+           color: #05D4D4;
+        }
+        
+        #name-center{
+          text-align: center;
+        }
+        
+        #title-center{
+            text-align: center;
+        }
+        
+        #job-title{
+            font-family: 'Apple Juice';
+            font-size: 48px;
+            display: inline-block;
+            color: #F596CA;
+        }
+        
+        #job-title:hover, #job-title:active{
+            color: #ED8E26;
+        }
+        
+        /*! About Page CSS */
+    
+        #about{
+            display: flex;
+            align-items: center;
+        }
+        
+        hr{
+            border: 5px solid;
+            border-color: #e1ffbb;
+            border-radius: 5px;
+          }
+        
+        #photo-of-me{
+            display: inline-block;
+            height: 50%;
+            margin-top: 20px;
+        }
+        
+        #about-title{
+            display: inline-block;
+            font-family: 'Fredoka', sans-serif;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 50px;
+            color: #afe1ff;
+        }
+        
+        .about-me{
+            display: inline-block;
+            font-family: 'Apple Juice';
+            padding: 10px;
+            font-size: 28px;
+            color: #ED8E26;
+        }
+        
+        #about-box{
+            display: inline-block;
+            margin-left: 150px;
+            height: 300px;
+            width: 50%;
+        }
+        
+        /*! Experience Page CSS */
+        #experience-css{
+            display: flex;
+            align-items: center;
+        }
+        
+        #experience{
+            font-family: 'Fredoka', sans-serif;
+            color: #afe1ff;
+            font-size: 50px; 
+        }
+        
+        #experience-box{
 
-#experience{
-    font-family: 'Fredoka', sans-serif;
-    color: #afe1ff;
-}
-
-#title{
-    font-family: 'Fredoka', sans-serif;
-    color: #ed8e26;
-}
-
-#date{
-    font-family: 'Fredoka', sans-serif;
-    color: #fff1ba;
-}
-
-.list-items{
-    font-family: 'Apple Juice';
-    color: #F596CA;
-}
+            display: inline-block;
+            margin: 0px 0px 0px 200px;
+            height: 400px;
+            width: 650px;
+        }
+        
+        #title{
+            font-family: 'Fredoka', sans-serif;
+            font-size: 20px;
+            color: #ed8e26;
+        }
+        
+        #date{
+            font-family: 'Fredoka', sans-serif;
+            font-size: 18px;
+            color: #fff1ba;
+        }
+        
+        #skills {   
+            display: inline-block;
+            margin-left: 150px;
+            height: 450px;
+            width: 450px;
+        }
+        
+        .list-items{
+            font-family: 'Apple Juice';
+            font-size: 18px;
+            color: #F596CA;
+        }
+        
+        /*! Projects Page CSS */
+               
+    }

@@ -1,12 +1,13 @@
 import React from 'react'
-import SocialBar from '../components/Socials'
+
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 function Projects() {
     return(
         <div>
             <Header/>
-            <SocialBar/>
+            <Footer/>
         </div>
     )
 }
